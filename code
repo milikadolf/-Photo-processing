@@ -1,0 +1,20 @@
+from PIL import Image
+
+def apply_filter(image_file, filter):
+    # Open image file
+    image = Image.open(image_file)
+    
+    # Apply filter
+    image = image.filter(filter)
+    
+    # Return processed image
+    return image
+
+
+In this example, the apply_filter function takes in an image_file which is the path of image file and a filter which is the filter that you want to apply on image, it opens the image file using the Image.open() function from the Pillow library and then applies the specified filter using the image.filter() method. It then returns the processed image.
+
+You can call this function and pass in an image file and a filter from the ImageFilter module of the Pillow library.
+
+from PIL import ImageFilter
+
+filtered_image = apply_filter("image.jpg", ImageFilter.BLUR)
